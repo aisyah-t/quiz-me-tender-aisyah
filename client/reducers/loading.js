@@ -1,4 +1,4 @@
-import {SET_LOADING} from '../actions'
+// import {SET_LOADING} from '../actions'
 
 const initialState = false
 

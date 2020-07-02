@@ -1,32 +1,32 @@
-export const SET_QUESTIONS = 'SET_QUESTIONS'
-export const SET_LOADING = 'SET_LOADING'
+import request from 'superagent'
 
-export function setQuestions(questions) {
+export const REQUEST_QUESTIONS = 'REQUEST_QUESTIONS'
+export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
+
+export const requestQuestions = () => {
     return {
-        type: SET_QUESTIONS,
+        type: REQUEST_QUESTIONS,
+    }
+}
+
+export const receiveQuestions = (questions) => {
+    return {
+        type: RECEIVE_QUESTIONS,
         questions: questions
     }
 }
 
-export function setLoading(loading) {
-    return {
-      type: SET_LOADING,
-      loading: loading,
+export function fetchQuestions() {
+    return (dispatch) => {
+        dispatch(requestQuestions())
+        return request
+            .get('/questions')
+            .then(res => {
+                dispatch(receiveQuestions(res.body))
+            })
+            .catch(err => {
+                console.log(err)
+                // dispatch(showError(err.message))
+            })
     }
-  }
-
-export function fetchQuestions(showLoading = true) {
-    return dispatch => {
-      // I'm about to get the questions
-      if (showLoading) dispatch(setLoading(true))
-      getQuestions()
-        .then(questions => {
-          // I've got the questions
-          dispatch(setQuestions(questions))
-          if (showLoading) dispatch(setLoading(false))
-        })
-        .catch(err => {
-          if (showLoading) dispatch(setLoading(false))
-        })
-    }
-  }
+}

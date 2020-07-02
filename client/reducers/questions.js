@@ -1,10 +1,9 @@
-import { SET_QUESTIONS } from '../actions'
+import { RECEIVE_QUESTIONS } from '../actions'
 
-const initialState = []
 
-const reducer = (state = initialState, action) => {
+const reducer = (state = {}, action) => {
     switch (action.type) {
-        case SET_QUESTIONS:
+        case RECEIVE_QUESTIONS:
             return action.questions
         default:
             return state

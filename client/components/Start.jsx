@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { fetchQuestions } from '../actions'
 
 class Start extends React.Component {
     componentDidMount() {
@@ -11,18 +13,14 @@ class Start extends React.Component {
         document.body.style.backgroundSize = null
     }
 
-    handleClick() {
-
-    }
-    
     render() {
         return (
             <div>
                 <h1>Quiz me tender</h1>
-                <button type="submit" value="Start quiz!" onClick={this.handleClick}>Let's go!</button>
+                <button type="submit" value="Start quiz!" onClick={() => this.props.dispatch(fetchQuestions())}>Let's go!</button>
             </div>
         )
     }
 }
 
-export default Start
+export default connect()(Start)
