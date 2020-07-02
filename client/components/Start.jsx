@@ -1,5 +1,5 @@
 import React from 'react'
-//import { HashRouter as Router, Route, Link , Redirect} from 'react-router-dom'
+import { HashRouter as Router, Route, Link , Redirect} from 'react-router-dom'
 
 class Start extends React.Component {
     state = {
@@ -14,8 +14,11 @@ class Start extends React.Component {
     render() {
         return (
             <>
-                page
-                
+              
+                <Router>
+                <Link to="question"><h1>start!</h1></Link>
+               </Router>
+               
             </>
         )
     }

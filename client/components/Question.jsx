@@ -1,6 +1,6 @@
 import React from 'react'
 //import { HashRouter as Router, Route, Link , Redirect} from 'react-router-dom'
-
+import Timer from "./timer"
 class Question extends React.Component {
     state = {
       
@@ -14,8 +14,8 @@ class Question extends React.Component {
     render() {
         return (
             <>
-                page
-                
+                question page
+                <Timer/>
             </>
         )
     }

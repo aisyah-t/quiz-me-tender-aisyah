@@ -14,7 +14,7 @@ class Winner extends React.Component {
     render() {
         return (
             <>
-                page
+                winner page
                 
             </>
         )
