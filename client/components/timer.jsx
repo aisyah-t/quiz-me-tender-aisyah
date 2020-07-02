@@ -1,9 +1,26 @@
 import React from 'react'
-//import { HashRouter as Router, Route, Link , Redirect} from 'react-router-dom'
+//rrimport { HashRouter as Router, Route, Link , Redirect} from 'react-router-dom'
 
 class Timer extends React.Component {
     state = {
         time: 30
+    }
+
+    componentDidMount(){
+      
+            setInterval(()=>{
+
+                if(this.state.time > 0) {
+                this.setState({
+                    time: this.state.time - 1
+                })
+                 }
+                 else{
+                     console.log("timer is done")
+
+                 }
+            }, 1000)
+        
     }
 
     
