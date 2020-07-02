@@ -13,19 +13,13 @@ const App = () => {
   return (
     <>
     <Router>
-                <Link to="start">restart</Link><br></br>
-    </Router>
-    
-     
-    <Router>
+
     <Route exact path="/"><Redirect to="/start" /></Route>
     <Route exact path="/start" component={Start} />
     <Route exact path="/question" component={Question} />
     <Route exact path="/answer" component={Answer} />
     <Route exact path="/score" component={Score} />
     <Route exact path="/winner" component={Winner} />
-
-
     </Router>
     </>
   )

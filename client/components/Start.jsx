@@ -1,5 +1,4 @@
 import React from 'react'
-import Question from "./Question"
 
 class Start extends React.Component {
     componentDidMount() {
@@ -11,12 +10,16 @@ class Start extends React.Component {
         document.body.style.backgroundImage = null;
         document.body.style.backgroundSize = null
     }
+
+    handleClick() {
+
+    }
     
     render() {
         return (
             <div>
-                <p>This is the landing page!!</p>
-                <Question/>
+                <h1>Quiz me tender</h1>
+                <button type="submit" value="Start quiz!" onClick={this.handleClick}>Let's go!</button>
             </div>
         )
     }
