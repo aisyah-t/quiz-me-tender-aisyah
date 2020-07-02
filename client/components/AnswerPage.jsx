@@ -3,33 +3,35 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
 class AnswerPage extends React.Component {
     state = {
-        showAnswers = false
+        showAnswers: false
     }
 
     handleSubmit = () => {
-        this.state.showAnswers === false ? this.setState({ showAnswers: true }) : this.setState({ showAnswers: false })
+        this.state.showAnswers == false 
+            ? this.setState({ showAnswers: true })
+            : this.setState({ showAnswers: false })
     }
 
     render () {
-        const showAnswersIsTrue = this.state.showAnswers
-
         return (
-            <>
-                {showAnswersIsTrue
-                    ? <input type="submit" onClick={this.HandleSubmit}>Hide answers</input>
-                    : <input type="submit" onClick={this.HandleSubmit}>Show answers</input>
+            <Router>
+                {this.state.showAnswers
+                    ? <input type="submit" value="Hide answers" onClick={this.handleSubmit} />
+                    : <input type="submit" value="Show answers" onClick={this.handleSubmit} />
                 }
-                {showAnswersIsTrue &&
+                {this.state.showAnswers &&
+                <h1>show answers is TRUE!</h1>
                     // Update props below
-                    props.categories.map(question => {
-                        return (
-                        // Question
-                        <Answer id={`answer_${question.id}`} answer={question.answer} />
-                        )
-                    })
+                    // props.categories.map(question => {
+                    //     return (
+                    //     // Question
+                    //     <Answer id={`answer_${question.id}`} answer={question.answer} />
+                    //     )
+                    // })
                 }
-                <Link to="/score">Continue to scores</Link>
-            </>
+
+                <Link to="/score"><button>Continue to scores</button></Link>
+            </Router>
         )
     }
 }
