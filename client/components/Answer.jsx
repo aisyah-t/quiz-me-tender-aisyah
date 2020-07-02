@@ -14,14 +14,13 @@ class Answer extends React.Component {
     render() {
         return (
             <>
-                awnser page
+                <h1>{this.props.answer}</h1>
                 <Router>
                 <Link to="score">see score</Link>
                 </Router>
             </>
         )
     }
-
 }
 
 export default Answer
