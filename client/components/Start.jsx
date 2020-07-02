@@ -1,28 +1,25 @@
 import React from 'react'
-import { HashRouter as Router, Route, Link , Redirect} from 'react-router-dom'
+import Question from "./Question"
 
 class Start extends React.Component {
-    state = {
-      
+    componentDidMount() {
+        document.body.style.backgroundImage = 'url(/images/mordor.jpg)';
+        document.body.style.backgroundSize = 'cover';
     }
 
-    componentDidMount(){
-      
+    componentWillUnmount() {
+        document.body.style.backgroundImage = null;
+        document.body.style.backgroundSize = null
     }
-
     
     render() {
         return (
-            <>
-              
-                <Router>
-                <Link to="question"><h1>start!</h1></Link>
-               </Router>
-               
-            </>
+            <div>
+                <p>This is the landing page!!</p>
+                <Question/>
+            </div>
         )
     }
-
 }
 
 export default Start
