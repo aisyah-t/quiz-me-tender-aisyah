@@ -44,14 +44,12 @@ class Question extends React.Component {
     }
 
     componentDidMount() {
-
         document.body.style = "animation: 31s ease-out 0s 5 forwards timeranimate"
         this.addChoicesToArray(this.props.questions[0], 0)
         this.addChoicesToArray(this.props.questions[1], 1)
         this.addChoicesToArray(this.props.questions[2], 2)
         this.addChoicesToArray(this.props.questions[3], 3)
         this.addChoicesToArray(this.props.questions[4], 4)
-
     }
 
     nextquestion = () => {

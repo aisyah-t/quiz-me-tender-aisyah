@@ -3,7 +3,7 @@ import React from 'react'
 
 class Winner extends React.Component {
     state = {
-      
+        
     }
 
     componentDidMount(){
@@ -15,7 +15,6 @@ class Winner extends React.Component {
         return (
             <>
                 winner page
-                
             </>
         )
     }
