@@ -14,6 +14,7 @@ class Answer extends React.Component {
     render() {
         return (
             <>
+            this is the awnser page
                 <h1>{this.props.answer}</h1>
                 <Router>
                 <Link to="score">see score</Link>
