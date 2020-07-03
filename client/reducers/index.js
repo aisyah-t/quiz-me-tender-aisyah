@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux'
+import {combineReducers} from 'redux'
 
+import submitName from './submitName'
 import questions from './questions'
 
-const reducer = combineReducers({
-    questions: questions,
+export default combineReducers({
+  submitName,
+  questions
 })
-
-export default reducer

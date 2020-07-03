@@ -1,3 +1,50 @@
-.container {
-    background-image: url('./images/mordor.jpg');
+body {
+    font-family: 'Zilla Slab', serif;
+}
+
+.mordor {
+    color: white;
+    margin: 14% 10%;
+    text-align: center;
+}
+
+.mordor h1 {
+    font-size: 4em;
+}
+
+.mordor h2 {
+    font-size: 2.5em;
+}
+
+.mordor h3 {
+    font-size: 1.75em;
+}
+
+.mordor p {
+    font-size: 2em;
+}
+
+.button {
+    border: 3px solid white;
+    border-radius: 4px;
+    background: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    width: 140px;
+}
+
+.article {
+    display: inline-block;
+    margin: 10px;
+}
+
+.article input {
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.article label {
+    font-weight: bold;
+    font-size: 1.5em;
 }
