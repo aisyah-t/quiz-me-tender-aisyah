@@ -68,8 +68,9 @@ class Question extends React.Component {
                     <div id="thequestion" className="animate__heartBeat animate__animated questionPageQuestion"
                         dangerouslySetInnerHTML={{ __html: marked(this.props.questions[this.state.count].question) }}>
                     </div>
+                    
                     {this.state[this.state.count].map((choice, i) => {
-                        return <h1 key={`choice_${i}`}>{choice}</h1>})}
+                        return <h1 key={`choice_${i}`} dangerouslySetInnerHTML={{ __html: marked(choice) }}></h1>})}
                     <Timer next={this.nextquestion} />
                 </center>
             </>
