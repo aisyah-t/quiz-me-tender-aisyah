@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import { fetchQuestions } from '../actions'
 import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 
-import Question from "./Question"
 import { submitName } from '../actions';
 
 class Start extends React.Component {
@@ -78,9 +77,8 @@ class Start extends React.Component {
                         </form>
                     <p>There is no ring, you'll just have to deal with it</p>
                     <p>P.S. The floor is lava</p>
-                { this.state.clicked && <Question/> }
+                {/* { this.state.clicked && <Question/> } */}
             </div>
-// update button to redirect to question page
         )
     }
 }

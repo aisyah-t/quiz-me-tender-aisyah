@@ -1,28 +1,50 @@
 import React from 'react'
-import { HashRouter as Router, Route, Link , Redirect} from 'react-router-dom'
+import { connect } from 'react-redux'
+import { fetchQuestions } from '../actions'
+import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 
 class Score extends React.Component {
     state = {
-      
+        redirect: null
     }
 
-    componentDidMount(){
-      
+    componentDidMount() {
+        this.setState({
+            redirect: null
+        })
     }
 
-    
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+
+        this.props.dispatch(fetchQuestions())
+            .then(() => {
+                this.setState({
+                    redirect: "/Question"
+                })
+            })
+    }
+
     render() {
+        if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        }
+
         return (
-            <>
-                score page
-                <Router>
-                <Link to="question">next question</Link><br></br>
-                <Link to="Winner">Winner page</Link>
-                </Router>
-            </>
+            <Router>
+                <h1>Scores</h1>
+                <input className="button" type="submit" value="Submit" onClick={this.handleSubmit} />
+                <br />
+                <br />
+                <Link to="Winner">
+
+                    <input className="button" type="submit" value="Winner..." />
+                </Link>
+            </Router>
         )
     }
 
 }
 
-export default Score
+export default connect()(Score)
