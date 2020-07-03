@@ -44,8 +44,8 @@ class Start extends React.Component {
         return (
             <div className="mordor">
                 <h1>QUIZ ME TENDER</h1>
-                    <h2>You'll be tender by the time Andy is done with you....</h2>
-                        <h3>Pick a name for Andy to call you by</h3>
+                    <h2>The one team... to rule them all!</h2>
+                        <h3>Pick a name for your fellowship</h3>
                         <form onSubmit={this.handleSubmit}>
                             <div className="article">
                                 <label>Team One : </label>
@@ -65,9 +65,9 @@ class Start extends React.Component {
                                     <input type="text" name="team3" value={this.state.team3} onChange={this.handleChange}/>
                                 </div>
                             </div>
-                        <input type="submit" value="Submit" onClick={this.handleClick}/>
+                        <input className="button" type="submit" value="Submit" onClick={this.handleClick}/>
                         </form>
-                    <p>There is no ring, there is just the one Andy, to rule them all</p>
+                    <p>There is no ring, you'll just have to deal with it</p>
                     <p>P.S. The floor is lava</p>
                 { this.state.clicked && <Question/> }
             </div>

@@ -8,7 +8,23 @@ body {
     text-align: center;
 }
 
-.mordor button {
+.mordor h1 {
+    font-size: 4em;
+}
+
+.mordor h2 {
+    font-size: 2.5em;
+}
+
+.mordor h3 {
+    font-size: 1.75em;
+}
+
+.mordor p {
+    font-size: 2em;
+}
+
+.button {
     border: 3px solid white;
     border-radius: 4px;
     background: none;
@@ -30,5 +46,5 @@ body {
 
 .article label {
     font-weight: bold;
-    font-size: 1..2rem;
+    font-size: 1.5em;
 }
