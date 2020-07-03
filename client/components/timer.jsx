@@ -42,6 +42,7 @@ class Timer extends React.Component {
           
         
     }
+    
     componentWillUnmount() {
        // clearInterval(this.timer)
     }
@@ -49,10 +50,7 @@ class Timer extends React.Component {
     render() {
         return (
             <>
-                this is the timer
-                <h2>{this.state.time}</h2>
-                {/* dont know if its possible to use a react router in js to re direct
-                 so gonna make a invisible link that gets clicked after the timer is done*/}
+                <h2 className="timer">{`${this.state.time} seconds left!`}</h2>
                 <div>
                     <Router>
                         <Link id="invisibleLink" to="answer"></Link>
