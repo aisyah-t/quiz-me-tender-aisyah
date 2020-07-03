@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import Question from "./Question"
+import { submitName } from '../actions';
 
 class Start extends React.Component {
     state = {
@@ -22,14 +23,15 @@ class Start extends React.Component {
     }
 
     handleChange = (e) => {
-        e.preventDefault()
         this.setState({
             [e.target.name]: e.target.value
         })
     }
 
     handleSubmit = (e) => {
-        console.log('send this to redux and do alllll the things!')
+        e.preventDefault()
+        const {team1,team2,team3} = this.state
+        this.props.dispatch(submitName(team1, team2, team3))
     }
 
     handleClick = (e) => {
@@ -39,8 +41,6 @@ class Start extends React.Component {
     }
     
     render() {
-        const teamName = this.state
-        console.log(teamName)
         return (
             <div className="mordor">
                 <h1>QUIZ ME TENDER</h1>
@@ -65,8 +65,8 @@ class Start extends React.Component {
                                     <input type="text" name="team3" value={this.state.team3} onChange={this.handleChange}/>
                                 </div>
                             </div>
+                        <input type="submit" value="Submit" onClick={this.handleClick}/>
                         </form>
-                        <button type="submit" onClick={this.handleClick}>Submit</button>
                     <p>There is no ring, there is just the one Andy, to rule them all</p>
                     <p>P.S. The floor is lava</p>
                 { this.state.clicked && <Question/> }
@@ -75,12 +75,4 @@ class Start extends React.Component {
     }
 }
 
-const mapStateToProps = (globalState) => {
-    return {
-      team1: globalState.team1,
-      team2: globalState.team2,
-      team3: globalState.team3,
-    }
-  }
-
-export default connect(mapStateToProps)(Start)
+export default connect()(Start)
