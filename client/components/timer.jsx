@@ -38,7 +38,7 @@ class Timer extends React.Component {
                     }
                 }
 
-            }, 1000)
+            }, 10)
           
         
     }

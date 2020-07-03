@@ -14,7 +14,7 @@ class Question extends React.Component {
     }
 
     componentDidMount() {
-        document.body.style = "animation: 11s ease-out 0s 5 forwards timeranimate"
+        document.body.style = "animation: 31s ease-out 0s 5 forwards timeranimate"
         console.log(this.props.questions)
     }
 
@@ -22,7 +22,6 @@ class Question extends React.Component {
         console.log("the func in question was run")
         this.setState({
             count: this.state.count + 1
-
         })
     }
 
