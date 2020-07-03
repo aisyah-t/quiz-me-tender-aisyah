@@ -1,36 +1,43 @@
 import React from 'react'
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
+import Answer from "./Answer"
+import Andy from "./Andy"
+
 class AnswerPage extends React.Component {
     state = {
-        showAnswers: false
+        showAnswers: false,
+        god: false,
     }
 
     handleSubmit = () => {
-        this.state.showAnswers == false 
-            ? this.setState({ showAnswers: true })
-            : this.setState({ showAnswers: false })
+        this.setState({
+            showAnswers: !this.state.showAnswers
+        })
     }
-
-    render () {
+    thunder = () => {
+console.log("YES")
+        this.setState({
+            god: !this.state.god
+        })
+    }
+    render() {
         return (
             <Router>
-                {this.state.showAnswers
-                    ? <input type="submit" value="Hide answers" onClick={this.handleSubmit} />
-                    : <input type="submit" value="Show answers" onClick={this.handleSubmit} />
-                }
-                {this.state.showAnswers &&
-                <h1>show answers is TRUE!</h1>
-                    // Update props below
-                    // props.categories.map(question => {
-                    //     return (
-                    //     // Question
-                    //     <Answer id={`answer_${question.id}`} answer={question.answer} />
-                    //     )
-                    // })
-                }
 
-                <Link to="/score"><button>Continue to scores</button></Link>
+                    {this.state.god
+                        && <Andy/>
+                     
+                    }   
+
+                 <div className="secret" onClick={this.thunder}></div>
+                <center>
+                    <h1>ANSWER TIME!</h1>
+                    {this.state.showAnswers
+                        ? <Answer />
+                        : <div>now pass your pice of paper to the group on your right<br></br><button onClick={this.handleSubmit}> show Answers</button></div>
+                    }
+                </center>
             </Router>
         )
     }

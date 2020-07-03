@@ -8,10 +8,13 @@ class Score extends React.Component {
         team1: '',
         team2: '',
         team3: '',
+      redirect: null
     }
 
-    componentDidMount(){
-      console.log('mounted')
+    componentDidMount() {
+        this.setState({
+            redirect: null
+        })
     }
 
     handleChange = (e) => {
@@ -25,19 +28,33 @@ class Score extends React.Component {
         e.preventDefault()
         const {team1,team2,team3} = this.state
         this.props.dispatch(submitScore(team1, team2, team3))
+      this.props.dispatch(fetchQuestions())
+            .then(() => {
+                this.setState({
+                    redirect: "/Question"
+                })
+            })
     }
 
     render() {
-        console.log(this.state)
+              if (this.state.redirect) {
+            return <Redirect to={this.state.redirect} />
+        }
         const team1 = this.props.submitName.team1
         const team2 = this.props.submitName.team2
         const team3 = this.props.submitName.team3
         return (
             <div>
-                score page
                 <Router>
+                                  <h1>Scores</h1>
+                <input className="button" type="submit" value="Next round" onClick={this.handleSubmit} />
+                <br />
+                <br />
                     <Link to="question">next question</Link><br></br>
-                    <Link to="Winner">Winner page</Link>
+                <Link to="Winner">
+
+                    <input className="button" type="submit" value="Winner..." />
+                </Link>
                 </Router>
                 <form onSubmit={this.handleSubmit}>
                     <div>
