@@ -80,7 +80,6 @@ class Start extends React.Component {
                     <p>P.S. The floor is lava</p>
                 { this.state.clicked && <Question/> }
             </div>
-// update button to redirect to question page
         )
     }
 }
