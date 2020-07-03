@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 
 class Timer extends React.Component {
     state = {
-        time: 1,
+        time: 30,
         count: 5,
     }
 
@@ -28,7 +28,7 @@ class Timer extends React.Component {
                         this.props.next()
                     this.setState({
                         count: this.state.count - 1,
-                        time: 1
+                        time: 30
                     })
                     }
                     else {
@@ -38,10 +38,11 @@ class Timer extends React.Component {
                     }
                 }
 
-            }, 10)
+            }, 1000)
           
         
     }
+    
     componentWillUnmount() {
        // clearInterval(this.timer)
     }
@@ -49,10 +50,7 @@ class Timer extends React.Component {
     render() {
         return (
             <>
-                this is the timer
-                <h2>{this.state.time}</h2>
-                {/* dont know if its possible to use a react router in js to re direct
-                 so gonna make a invisible link that gets clicked after the timer is done*/}
+                <h2 className="timer">{`${this.state.time} seconds left!`}</h2>
                 <div>
                     <Router>
                         <Link id="invisibleLink" to="answer"></Link>
