@@ -1,8 +1,7 @@
 import React from 'react'
-
 import {connect} from 'react-redux'
 import { fetchQuestions } from '../actions'
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 
 import Question from "./Question"
 import { submitName } from '../actions';
@@ -43,10 +42,14 @@ class Start extends React.Component {
         this.setState({
             clicked: true
         })
-      }
+      })
     }
     
     render() {
+        if (this.state.clicked) {
+            return <Redirect to="/Question" />
+        }
+        
         return (
             <div className="mordor">
                 <h1>QUIZ ME TENDER</h1>
