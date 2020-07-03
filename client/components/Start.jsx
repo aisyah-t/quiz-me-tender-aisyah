@@ -13,11 +13,15 @@ class Start extends React.Component {
         document.body.style.backgroundSize = null
     }
 
+    handleClick = () => {
+        this.props.dispatch(fetchQuestions())
+    }
+    
     render() {
         return (
             <div>
                 <h1>Quiz me tender</h1>
-                <button type="submit" value="Start quiz!" onClick={() => this.props.dispatch(fetchQuestions())}>Let's go!</button>
+                <button type="submit" value="Start quiz!" onClick={this.handleClick}>Let's go!</button>
             </div>
         )
     }
