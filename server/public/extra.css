@@ -176,3 +176,34 @@
     
 
   }
+
+
+.timerbg {
+    animation: 10s ease-out 0s 1 forwards timeranimate infinite;
+}
+@keyframes timeranimate{
+    0% {
+    background-color: greenyellow;
+    }
+    25% {
+    background-color: greenyellow;
+    }
+    50%{
+        background-color: rgb(255,255,0);
+       
+    }
+    75% {  
+        background-color: darkorange;
+    }
+    98% {  
+        background-color: crimson;
+    }
+    100% {  
+        background-color: greenyellow;
+    }
+}
+.test {
+    animation: 0.4s ease-out 0s 1 forwards  animate__heartBeat ;
+
+   
+}

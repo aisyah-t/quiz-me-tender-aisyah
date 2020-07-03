@@ -1,5 +1,6 @@
 import React from 'react'
 import Question from "./Question"
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
 class Start extends React.Component {
     componentDidMount() {
@@ -16,7 +17,9 @@ class Start extends React.Component {
         return (
             <div>
                 <p>This is the landing page!!</p>
-                <Question/>
+                <Router>
+                 <Link to="question">click start</Link>
+                </Router>
             </div>
         )
     }
