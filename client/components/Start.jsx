@@ -1,6 +1,10 @@
 import React from 'react'
-import Question from "./Question"
+import { connect } from 'react-redux'
+import { fetchQuestions } from '../actions'
+
 import { HashRouter as Router, Route, Link } from 'react-router-dom'
+
+import Question from "./Question"
 
 class Start extends React.Component {
     componentDidMount() {
@@ -12,11 +16,17 @@ class Start extends React.Component {
         document.body.style.backgroundImage = null;
         document.body.style.backgroundSize = null
     }
+
+    handleClick = () => {
+        this.props.dispatch(fetchQuestions())
+    }
     
     render() {
         return (
             <div>
-                <p>This is the landing page!!</p>
+                <h1>Quiz me tender</h1>
+                <button type="submit" value="Start quiz!" onClick={this.handleClick}>Let's go!</button>
+
                 <Router>
                  <Link to="question">click start</Link>
                 </Router>
@@ -25,4 +35,4 @@ class Start extends React.Component {
     }
 }
 
-export default Start
+export default connect()(Start)
