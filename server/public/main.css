@@ -48,3 +48,9 @@ body {
     font-weight: bold;
     font-size: 1.5em;
 }
+
+.display {
+    display: inline-block;
+    width: 100px;
+    margin: 20px
+}

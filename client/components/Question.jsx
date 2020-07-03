@@ -15,7 +15,6 @@ class Question extends React.Component {
 
     componentDidMount() {
         document.body.style = "animation: 11s ease-out 0s 5 forwards timeranimate"
-        console.log(this.props.questions)
     }
 
     nextquestion = () => {

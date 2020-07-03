@@ -4,6 +4,7 @@ export const RECEIVE_NAMES = 'RECEIVE_NAMES'
 export const REQUEST_NAMES = 'REQUEST_NAMES'
 export const REQUEST_QUESTIONS = 'REQUEST_QUESTIONS'
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
+export const RECEIVE_SCORE = 'RECEIVE_SCORE'
 
 export const requestName = () => {
     return {
@@ -58,3 +59,23 @@ export function fetchQuestions() {
             })
     }
 }
+  
+  export const submitScore = (team1, team2, team3) => {
+    return {
+      type: RECEIVE_SCORE,
+      team1, team2, team3
+    }
+  }
+
+export function fetchScore () {
+    return (dispatch) => {
+      return request
+      .get('/score')
+        .then(res => {
+          dispatch(submitScore(res.body))
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+  }

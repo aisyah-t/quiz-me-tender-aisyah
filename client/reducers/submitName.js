@@ -1,4 +1,3 @@
-  
 import {RECEIVE_NAMES} from '../actions'
 
 function submitName (state = {}, action) {
