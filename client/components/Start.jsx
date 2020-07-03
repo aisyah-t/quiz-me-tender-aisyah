@@ -1,5 +1,8 @@
 import React from 'react'
+
 import {connect} from 'react-redux'
+import { fetchQuestions } from '../actions'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
 import Question from "./Question"
 import { submitName } from '../actions';
@@ -35,9 +38,12 @@ class Start extends React.Component {
     }
 
     handleClick = (e) => {
+      this.props.dispatch(fetchQuestions())
+      .then(() => {
         this.setState({
             clicked: true
         })
+      }
     }
     
     render() {
@@ -71,6 +77,7 @@ class Start extends React.Component {
                     <p>P.S. The floor is lava</p>
                 { this.state.clicked && <Question/> }
             </div>
+// update button to redirect to question page
         )
     }
 }
