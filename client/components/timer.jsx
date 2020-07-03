@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Link, Redirect } from 'react-router-dom'
 
 class Timer extends React.Component {
     state = {
-        time: 1,
+        time: 30,
         count: 5,
     }
 
@@ -28,7 +28,7 @@ class Timer extends React.Component {
                         this.props.next()
                     this.setState({
                         count: this.state.count - 1,
-                        time: 1
+                        time: 30
                     })
                     }
                     else {
