@@ -34,7 +34,7 @@ class Score extends React.Component {
         return (
             <Router>
                 <h1>Scores</h1>
-                <input className="button" type="submit" value="Submit" onClick={this.handleSubmit} />
+                <input className="button" type="submit" value="Next round" onClick={this.handleSubmit} />
                 <br />
                 <br />
                 <Link to="Winner">
