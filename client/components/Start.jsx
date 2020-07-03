@@ -23,14 +23,12 @@ class Start extends React.Component {
     
     render() {
         return (
-            <div>
+            <Router>
                 <h1>Quiz me tender</h1>
-                <button type="submit" value="Start quiz!" onClick={this.handleClick}>Let's go!</button>
+                <button type="submit" value="getQuestions" onClick={this.handleClick}>Get some questions</button>
 
-                <Router>
-                 <Link to="question">click start</Link>
-                </Router>
-            </div>
+                <Link to="question"><button type="submit" value="startQuiz">Let's go!</button></Link>
+            </Router>
         )
     }
 }
