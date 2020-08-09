@@ -1,28 +1,20 @@
-# A starter webpack project for React
+# Quiz Me Tender
 
-This is a starter project that uses webpack to transpile and bundle ES6 React code. To use, consider these steps:
+[Quiz Me Tender](http://quiz-me-tender.herokuapp.com/) is a pub quiz app.
 
-* Fork this repo
-* Rename your repo according to the app you're building
+It was built using Express, React, Redux and Node.js and pulls a random set of questions from the [Open Trivia Database](https://opentdb.com/) public API.
 
-```sh
-git clone https://github.com/[your-account]/[your-app].git
-cd [your-app] && npm i
-```
+This was a group project at [Enspiral Dev Academy](https://devacademy.co.nz/), built in 2 days by:
 
-To start the development server with a watcher that rebuilds your code, run `npm run dev`. The assets built by webpack are placed in `server/public`. This folder is defined as a static folder in an Express.js server that can be started with `npm run server`.
+- [Aisyah Tajudin](https://github.com/aisyah-t)
+- [Andrew Tempany](https://github.com/andrewtempany)
+- [Fai Songprasit](https://github.com/fai-songprasit)
+- [Joe Butler](https://github.com/josef-butler)
+- [Rubin Gower](https://github.com/rubin-gower)
 
-Additional components should be placed in `client/components`.
+## Take a squiz
 
-## Separate client/server
+A couple of screenshots are below, and you can also play the game [here](http://quiz-me-tender.herokuapp.com/).
 
-The boilerplate is also set up to host the client using `webpack-dev-server` with hot module reloading etc. To use this method, in one terminal run:
-```sh
-npm run client
-```
-and in the other:
-```sh
-npm run server
-```
-The client will be available on http://localhost:8080 and the server on http://localhost:3000. Note that you will still need to manage CORS between the two, as they are on different ports.
-
+![Quiz me tender start](/readme/start-page.png "Quiz me tender start page")
+![Quiz me tender question page](/readme/question-page.png "Quiz me tender question page")
